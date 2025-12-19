@@ -17,7 +17,6 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 ### Shell Completion & Alias
 ```bash
 source <(kubectl completion zsh)
-source <(minikube completion zsh)
 alias k=kubectl
 compdef __start_kubectl k
 ```
