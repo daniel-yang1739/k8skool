@@ -32,6 +32,7 @@ minikube dashboard                  # Open web dashboard
 minikube tunnel                     # Create tunnel for LoadBalancer
 minikube ssh                        # SSH into minikube VM
 docker exec -it minikube bash       # SSH into minikube node
+minikube addons enable metrics-server # Enable metrics server
 ```
 
 ## Cluster & Context
