@@ -29,6 +29,8 @@ minikube start --driver='docker'    # Start with docker driver
 minikube stop                       # Stop cluster
 minikube delete                     # Delete cluster
 minikube dashboard                  # Open web dashboard
+minikube tunnel                     # Create tunnel for LoadBalancer
+minikube ssh                        # SSH into minikube VM
 docker exec -it minikube bash       # SSH into minikube node
 ```
 
@@ -57,6 +59,8 @@ k run nginx --image=nginx           # Create pod imperatively
 k run nginx --image=nginx --dry-run=client -o yaml > pod.yaml  # Generate YAML
 k describe pod <name>               # Pod details
 k delete pod <name>                 # Delete pod
+k get po -o wide                    # Show more info (IP, Node)
+k exec -it <pod> -- bash            # Interactive shell in pod
 watch -n 1 "kubectl get pods"       # Watch pods
 ```
 
@@ -76,6 +80,15 @@ k delete deployments.apps <name>    # Delete deployment
 ```bash
 k get replicasets.apps              # List replicasets
 k describe replicasets.apps <name>  # ReplicaSet details
+
+## Storage
+
+```bash
+k get pv                            # List persistent volumes
+k get pvc                           # List persistent volume claims
+k delete pvc <name>                 # Delete a PVC
+k get sc                            # List storage classes
+```
 ```
 
 ## Apply & Delete
