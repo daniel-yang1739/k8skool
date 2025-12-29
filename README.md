@@ -118,10 +118,18 @@ strategy:
 ## Project Structure
 
 ```
-├── daname/
-│   └── namespace.yaml      # Namespace definition
-└── deploy/
-    ├── nginx.yaml          # Pod example
-    ├── deploy.yaml         # Deployment (RollingUpdate)
-    └── deploy-recreate.yaml # Deployment (Recreate)
+├── deploy/
+│   ├── deploy-error.yaml    # Deployment with intentional error
+│   ├── deploy-recreate.yaml # Deployment (Recreate strategy)
+│   ├── deploy.yaml          # Deployment (RollingUpdate strategy)
+│   ├── frontend.yaml        # Frontend resources
+│   ├── nginx-doc.yaml       # Nginx documentation
+│   ├── nginx-storage.yaml   # Nginx with persistent storage
+│   └── nginx.yaml           # Basic Nginx pod
+└── mealie/
+    ├── deployment.yaml      # Mealie deployment
+    ├── namespace.yaml       # Mealie namespace
+    ├── nginx-mealie.yaml    # Nginx configuration for Mealie
+    ├── service.yaml         # Mealie service
+    └── storage.yaml         # Mealie storage configuration
 ```
