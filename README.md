@@ -134,3 +134,10 @@ strategy:
     ├── service.yaml         # Mealie service
     └── storage.yaml         # Mealie storage configuration
 ```
+
+## Monitoring
+
+### Get Grafana Admin Password
+```bash
+kubectl get secret --namespace monitoring $(kubectl get secret --namespace monitoring -l "app.kubernetes.io/name=grafana" -o jsonpath="{.items[0].metadata.name}") -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+```
